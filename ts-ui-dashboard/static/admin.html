@@ -202,9 +202,9 @@
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td>{{record.boughtDate}}</td>
-                                            <td>{{record.travelDate}}</td>
-                                            <td>{{record.travelTime}}</td>
+                                            <td>{{record.boughtDate | date:'yyyy-MM-dd HH:mm:ss'}}</td>
+                                            <td>{{record.travelDate | date:'yyyy-MM-dd HH:mm:ss'}}</td>
+                                            <td>{{record.travelTime | date:'yyyy-MM-dd HH:mm:ss'}}</td>
                                             <td>{{record.accountId}}</td>
                                             <td>{{record.contactsName}}</td>
                                             <td>{{record.documentType}}</td>
