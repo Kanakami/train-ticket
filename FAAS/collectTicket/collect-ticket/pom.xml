@@ -63,7 +63,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>2.3.7.RELEASE</version>
                 <configuration>
-                    <mainClass>com.example.demo.DemoApplication</mainClass>
+                    <mainClass>com.example.getOrderById.DemoApplication</mainClass>
                     <layers>
                         <enabled>true</enabled>
                     </layers>

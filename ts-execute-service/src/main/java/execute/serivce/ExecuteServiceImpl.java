@@ -137,7 +137,7 @@ public class ExecuteServiceImpl implements ExecuteService {
         ExecuteServiceImpl.LOGGER.info("[Execute Service][Get Order] Getting....");
         HttpEntity requestEntity = new HttpEntity(headers);
         ResponseEntity<Response<Order>> re = restTemplate.exchange(
-                "http://ts-order-service:12031/api/v1/orderservice/order/" + orderId,
+                "http://10.176.122.15:31112/function/get-order-by-id/order/" + orderId,
                 HttpMethod.GET,
                 requestEntity,
                 new ParameterizedTypeReference<Response<Order>>() {
