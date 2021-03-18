@@ -25,6 +25,10 @@ spec:
           limits:
             cpu: 500m
             memory: 500Mi
+      volumes:
+      - name: date-config
+        hostPath:
+          path: /etc/localtime
 
 ---
 
