@@ -2,7 +2,7 @@ provider:
   name: openfaas
   gateway: http://10.176.122.15:31112
 functions:
-  springbootdemo:
+  get-order-by-id:
     lang: springboot
-    handler: ./springbootdemo
-    image: kanakami/springbootdemo:latest
+    handler: ./get-order-by-id
+    image: kanakami/get-order-by-id:latest
