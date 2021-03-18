@@ -20,3 +20,5 @@
 .DS_Store
 */template/
 */build/
+/FAAS/getOrderById/build/
+/FAAS/getOrderById/template/
