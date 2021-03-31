@@ -906,6 +906,13 @@ spec:
             path: "/"
             port: 14269
           initialDelaySeconds: 5
+        volumeMounts:
+        - name: host-time
+          mountPath: /etc/localtime
+      volumes:
+      - name: host-time
+        hostPath:
+            path: /etc/localtime
 
 ---
 

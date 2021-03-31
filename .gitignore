@@ -22,3 +22,6 @@
 */build/
 /FAAS/getOrderById/build/
 /FAAS/getOrderById/template/
+/FAAS/*/build/
+/FAAS/*/template/
+/FAAS/*/target/
