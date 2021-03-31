@@ -67,7 +67,7 @@ spec:
       containers:
         - name: ts-travel-plan-service
           image: kanakami/ts-travel-plan:0.0.1
-          imagePullPolicy: Always
+          imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 14322
           resources:
