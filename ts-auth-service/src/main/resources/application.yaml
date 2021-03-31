@@ -17,3 +17,4 @@ opentracing:
     udp-sender:
       host: jaeger
       port: 6831
+    enabled: true

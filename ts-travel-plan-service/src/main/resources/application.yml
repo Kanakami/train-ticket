@@ -12,7 +12,7 @@ swagger:
 
 opentracing:
   jaeger:
-    enabled: true
     udp-sender:
       host: jaeger
       port: 6831
+    enabled: true
