@@ -106,7 +106,7 @@ public class BasicServiceImpl implements BasicService {
         BasicServiceImpl.LOGGER.info("[Basic Information Service][Query For Station Id] Station Id: {}", stationName);
         HttpEntity requestEntity = new HttpEntity( headers);
         ResponseEntity<Response> re = restTemplate.exchange(
-                "http://10.176.122.15:31112/function/stations/id/" + stationName,
+                "http://10.176.122.15:31112/function/query-for-station-id/stations/id/" + stationName,
                 HttpMethod.GET,
                 requestEntity,
                 Response.class);
@@ -117,7 +117,7 @@ public class BasicServiceImpl implements BasicService {
         BasicServiceImpl.LOGGER.info("[Basic Information Service][Check Station Exists] Station Name: {}", stationName);
         HttpEntity requestEntity = new HttpEntity( headers);
         ResponseEntity<Response> re = restTemplate.exchange(
-                "http://ts-station-service:12345/api/v1/stationservice/stations/id/" + stationName,
+                "http://10.176.122.15:31112/function/query-for-station-id/stations/id/" + stationName,
                 HttpMethod.GET,
                 requestEntity,
                 Response.class);

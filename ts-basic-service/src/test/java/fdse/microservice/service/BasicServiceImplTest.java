@@ -42,12 +42,12 @@ public class BasicServiceImplTest {
         ResponseEntity<Response> re = new ResponseEntity<>(response, HttpStatus.OK);
         //mock checkStationExists() and queryForStationId()
         Mockito.when(restTemplate.exchange(
-                "http://ts-station-service:12345/api/v1/stationservice/stations/id/" + "starting_place",
+                "http://10.176.122.15:31112/function/query-for-station-id/stations/id/" + "starting_place",
                 HttpMethod.GET,
                 requestEntity,
                 Response.class)).thenReturn(re);
         Mockito.when(restTemplate.exchange(
-                "http://ts-station-service:12345/api/v1/stationservice/stations/id/" + "end_place",
+                "http://10.176.122.15:31112/function/query-for-station-id/stations/id/" + "end_place",
                 HttpMethod.GET,
                 requestEntity,
                 Response.class)).thenReturn(re);
@@ -82,7 +82,7 @@ public class BasicServiceImplTest {
         Response response = new Response<>();
         ResponseEntity<Response> re = new ResponseEntity<>(response, HttpStatus.OK);
         Mockito.when(restTemplate.exchange(
-                "http://ts-station-service:12345/api/v1/stationservice/stations/id/" + "stationName",
+                "http://10.176.122.15:31112/function/query-for-station-id/stations/id/" + "stationName",
                 HttpMethod.GET,
                 requestEntity,
                 Response.class)).thenReturn(re);
@@ -95,7 +95,7 @@ public class BasicServiceImplTest {
         Response response = new Response<>(1, null, null);
         ResponseEntity<Response> re = new ResponseEntity<>(response, HttpStatus.OK);
         Mockito.when(restTemplate.exchange(
-                "http://ts-station-service:12345/api/v1/stationservice/stations/id/" + "stationName",
+                "http://10.176.122.15:31112/function/query-for-station-id/stations/id/" + "stationName",
                 HttpMethod.GET,
                 requestEntity,
                 Response.class)).thenReturn(re);
