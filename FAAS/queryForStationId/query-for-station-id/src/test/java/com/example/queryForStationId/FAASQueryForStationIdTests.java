@@ -1,4 +1,4 @@
-package com.example.getOrderById;
+package com.example.queryForStationId;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
