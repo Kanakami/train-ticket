@@ -1,0 +1,8 @@
+provider:
+  name: openfaas
+  gateway: http://10.176.122.15:31112
+functions:
+  get-other-order-by-id:
+    lang: springboot
+    handler: ./query-for-station-id
+    image: kanakami/query-for-station-id:latest

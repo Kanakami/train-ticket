@@ -3,6 +3,7 @@ spring:
       name: ts-config-service
     data:
       mongodb:
+#        host: localhost
         host: ts-config-mongo
 #       username: user
 #       password: ${MONGODB_PASSWORD}
@@ -15,3 +16,9 @@ server:
 
 swagger:
   controllerPackage: config.controller
+opentracing:
+  jaeger:
+    enabled: true
+    udp-sender:
+      host: jaeger
+      port: 6831
