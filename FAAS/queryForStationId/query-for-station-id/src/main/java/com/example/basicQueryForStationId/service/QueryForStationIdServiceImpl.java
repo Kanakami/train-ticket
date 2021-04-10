@@ -1,11 +1,11 @@
-package com.example.queryForStationId.service;
+package com.example.basicQueryForStationId.service;
 
-import com.example.queryForStationId.repository.StationRepository;
+import com.example.basicQueryForStationId.repository.StationRepository;
 import edu.fudan.common.util.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Service;
-import com.example.queryForStationId.entity.Station;
+import com.example.basicQueryForStationId.entity.Station;
 
 @Service
 public class QueryForStationIdServiceImpl implements QueryForStationIdService{

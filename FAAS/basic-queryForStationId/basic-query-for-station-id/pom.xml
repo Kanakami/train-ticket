@@ -3,10 +3,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.example</groupId>
-    <artifactId>queryForStationId</artifactId>
+    <artifactId>basicQueryForStationId</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>queryForStationId</name>
-    <description>query for station id</description>
+    <name>basic-queryForStationId</name>
+    <description>basic-query for station id</description>
 
     <properties>
         <java.version>1.8</java.version>
@@ -84,7 +84,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>2.3.7.RELEASE</version>
                 <configuration>
-                    <mainClass>com.example.basicQueryForStationId.FAASQueryForStationId</mainClass>
+                    <mainClass>com.example.basicQueryForStationId.FAASBasicQueryForStationId</mainClass>
                     <layers>
                         <enabled>true</enabled>
                     </layers>

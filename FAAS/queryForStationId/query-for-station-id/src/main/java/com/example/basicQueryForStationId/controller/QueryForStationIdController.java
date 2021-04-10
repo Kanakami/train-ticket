@@ -1,10 +1,9 @@
-package com.example.queryForStationId.controller;
-import com.example.queryForStationId.service.QueryForStationIdService;
+package com.example.basicQueryForStationId.controller;
+import com.example.basicQueryForStationId.service.QueryForStationIdService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.HttpEntity;
-import java.util.Date;
 
 import static org.springframework.http.ResponseEntity.ok;
 

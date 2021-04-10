@@ -34,7 +34,7 @@ public class TicketInfoServiceImpl implements TicketInfoService {
     public Response queryForStationId(String name, HttpHeaders headers) {
         HttpEntity requestEntity = new HttpEntity(headers);
         ResponseEntity<Response> re = restTemplate.exchange(
-                "http://ts-basic-service:15680/api/v1/basicservice/basic/" + name,
+                "http://10.176.122.15:31112/function/basic-query-for-station-id/basic/" + name,
                 HttpMethod.GET,
                 requestEntity,
                 Response.class);

@@ -1,4 +1,4 @@
-package com.example.queryForStationId.entity;
+package com.example.basicQueryForStationId.entity;
 
 
 import lombok.Data;

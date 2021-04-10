@@ -1,6 +1,6 @@
-package com.example.queryForStationId.repository;
+package com.example.basicQueryForStationId.repository;
 
-import com.example.queryForStationId.entity.Station;
+import com.example.basicQueryForStationId.entity.Station;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;

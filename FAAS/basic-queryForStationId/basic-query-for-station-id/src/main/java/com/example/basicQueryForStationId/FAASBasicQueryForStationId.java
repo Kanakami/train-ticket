@@ -1,12 +1,12 @@
-package com.example.queryForStationId;
+package com.example.basicQueryForStationId;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
 @SpringBootApplication
-public class FAASQueryForStationId {
+public class FAASBasicQueryForStationId {
     public static void main(String[] args) {
-        SpringApplication.run(FAASQueryForStationId.class, args);
+        SpringApplication.run(FAASBasicQueryForStationId.class, args);
     }
 }

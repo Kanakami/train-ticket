@@ -51,7 +51,7 @@ public class TicketInfoServiceImplTest {
         Response response = new Response();
         ResponseEntity<Response> re = new ResponseEntity<>(response, HttpStatus.OK);
         Mockito.when( restTemplate.exchange(
-                "http://ts-basic-service:15680/api/v1/basicservice/basic/name",
+                "http://10.176.122.15:31112/function/basic-query-for-station-id/basic/name",
                 HttpMethod.GET,
                 requestEntity,
                 Response.class)).thenReturn(re);
