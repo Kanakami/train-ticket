@@ -84,7 +84,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>2.3.7.RELEASE</version>
                 <configuration>
-                    <mainClass>com.example.basicQueryForStationId.FAASQueryForStationId</mainClass>
+                    <mainClass>com.example.ticketinfoQueryForStationId.FAASQueryForStationId</mainClass>
                     <layers>
                         <enabled>true</enabled>
                     </layers>

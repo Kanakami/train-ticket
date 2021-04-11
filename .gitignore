@@ -25,3 +25,4 @@
 /FAAS/*/build/
 /FAAS/*/template/
 /FAAS/*/target/
+/scriptsForJaeger/accessServer.py
