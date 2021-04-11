@@ -339,7 +339,7 @@ public class Travel2ServiceImpl implements Travel2Service {
     private String queryForStationId(String stationName, HttpHeaders headers) {
         HttpEntity requestEntity = new HttpEntity(headers);
         ResponseEntity<Response<String>> re = restTemplate.exchange(
-                "http://ts-ticketinfo-service:15681/api/v1/ticketinfoservice/ticketinfo/" + stationName,
+                "http://10.176.122.15:31112/function/ticketinfo-query-for-station-id/ticketinfo/" + stationName,
                 HttpMethod.GET,
                 requestEntity,
                 new ParameterizedTypeReference<Response<String>>() {
