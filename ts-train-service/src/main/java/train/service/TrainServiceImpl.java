@@ -32,7 +32,7 @@ public class TrainServiceImpl implements TrainService {
         if (repository.findById(id) == null) {
             return null;
         } else {
-            return repository.findById(id);
+            return repository.findById(id).get();
         }
     }
 

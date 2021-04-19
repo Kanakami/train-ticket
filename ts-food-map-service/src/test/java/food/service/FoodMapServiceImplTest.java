@@ -39,7 +39,7 @@ public class FoodMapServiceImplTest {
     @Test
     public void testCreateFoodStore1() {
         FoodStore fs = new FoodStore();
-        Mockito.when(foodStoreRepository.findById(Mockito.any(UUID.class))).thenReturn(fs);
+        Mockito.when(foodStoreRepository.findById(fs.getId())).thenReturn(fs);
         Response result = foodMapServiceImpl.createFoodStore(fs, headers);
         Assert.assertEquals(new Response<>(0, "Already Exists Id", null), result);
     }

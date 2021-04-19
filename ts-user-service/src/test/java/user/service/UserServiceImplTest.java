@@ -138,7 +138,7 @@ public class UserServiceImplTest {
     public void testUpdateUser1() {
         UserDto userDto = new UserDto();
         User oldUser = new User();
-        Mockito.when(userRepository.findByUserName(Mockito.anyString())).thenReturn(oldUser);
+        Mockito.when(userRepository.findByUserName(userDto.getUserName())).thenReturn(oldUser);
         Mockito.doNothing().doThrow(new RuntimeException()).when(userRepository).deleteByUserId(Mockito.any(UUID.class));
         Mockito.when(userRepository.save(Mockito.any(User.class))).thenReturn(null);
         Response result = userServiceImpl.updateUser(userDto, headers);

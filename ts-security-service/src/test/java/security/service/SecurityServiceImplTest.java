@@ -58,7 +58,7 @@ public class SecurityServiceImplTest {
     @Test
     public void testAddNewSecurityConfig1() {
         SecurityConfig sc = new SecurityConfig();
-        Mockito.when(securityRepository.findByName(Mockito.anyString())).thenReturn(sc);
+        Mockito.when(securityRepository.findByName(sc.getName())).thenReturn(sc);
         Response result = securityServiceImpl.addNewSecurityConfig(sc, headers);
         Assert.assertEquals(new Response<>(0, "Security Config Already Exist", null), result);
     }
@@ -83,7 +83,7 @@ public class SecurityServiceImplTest {
     @Test
     public void testModifySecurityConfig2() {
         SecurityConfig sc = new SecurityConfig();
-        Mockito.when(securityRepository.findById(Mockito.any(UUID.class))).thenReturn(sc);
+        Mockito.when(securityRepository.findById(sc.getId())).thenReturn(sc);
         Mockito.when(securityRepository.save(Mockito.any(SecurityConfig.class))).thenReturn(null);
         Response result = securityServiceImpl.modifySecurityConfig(sc, headers);
         Assert.assertEquals(new Response<>(1, "Success", sc), result);

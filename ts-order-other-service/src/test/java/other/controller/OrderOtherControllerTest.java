@@ -88,7 +88,11 @@ public class OrderOtherControllerTest {
         String result = mockMvc.perform(MockMvcRequestBuilders.post("/api/v1/orderOtherService/orderOther/query").contentType(MediaType.APPLICATION_JSON).content(requestJson))
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andReturn().getResponse().getContentAsString();
-        Assert.assertEquals(response, JSONObject.parseObject(result, Response.class));
+        Response actual = new Response();
+        if(!result.equals("")){
+            actual = JSONObject.parseObject(result, Response.class);
+        }
+        Assert.assertEquals(response, actual);
     }
 
     @Test
@@ -99,7 +103,11 @@ public class OrderOtherControllerTest {
         String result = mockMvc.perform(MockMvcRequestBuilders.post("/api/v1/orderOtherService/orderOther/refresh").contentType(MediaType.APPLICATION_JSON).content(requestJson))
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andReturn().getResponse().getContentAsString();
-        Assert.assertEquals(response, JSONObject.parseObject(result, Response.class));
+        Response actual = new Response();
+        if(!result.equals("")){
+            actual = JSONObject.parseObject(result, Response.class);
+        }
+        Assert.assertEquals(response, actual);
     }
 
     @Test

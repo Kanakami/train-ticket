@@ -19,6 +19,7 @@ import org.springframework.web.client.RestTemplate;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import static org.mockito.internal.verification.VerificationModeFactory.times;
 
@@ -95,7 +96,7 @@ public class InsidePaymentServiceImplTest {
         AccountInfo info = new AccountInfo();
         List<Money> list = new ArrayList<>();
         list.add(new Money());
-        Mockito.when(addMoneyRepository.findByUserId(Mockito.anyString())).thenReturn(list);
+        Mockito.when(addMoneyRepository.findByUserId(info.getUserId())).thenReturn(list);
         Response result = insidePaymentServiceImpl.createAccount(info, headers);
         Assert.assertEquals(new Response<>(0, "Create Account Failed, Account already Exists", null), result);
     }
@@ -199,7 +200,7 @@ public class InsidePaymentServiceImplTest {
     @Test
     public void testInitPayment2() {
         Payment payment = new Payment();
-        Mockito.when(paymentRepository.findById(Mockito.anyString())).thenReturn(payment);
+        Mockito.when(paymentRepository.findById(Mockito.anyString())).thenReturn(Optional.ofNullable(payment));
         Mockito.when(paymentRepository.save(Mockito.any(Payment.class))).thenReturn(null);
         insidePaymentServiceImpl.initPayment(payment, headers);
         Mockito.verify(paymentRepository, times(0)).save(Mockito.any(Payment.class));

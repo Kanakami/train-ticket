@@ -38,7 +38,7 @@ public class FoodServiceImplTest {
     @Test
     public void testCreateFoodOrder1() {
         FoodOrder fo = new FoodOrder();
-        Mockito.when(foodOrderRepository.findByOrderId(Mockito.any(UUID.class))).thenReturn(fo);
+        Mockito.when(foodOrderRepository.findByOrderId(fo.getId())).thenReturn(fo);
         Response result = foodServiceImpl.createFoodOrder(fo, headers);
         Assert.assertEquals(new Response<>(0, "Order Id Has Existed.", null), result);
     }
