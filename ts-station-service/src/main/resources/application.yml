@@ -15,3 +15,23 @@ server:
 
 swagger:
   controllerPackage: fdse.microservice
+
+opentracing:
+  jaeger:
+    udp-sender:
+      host: jaeger
+      port: 6831
+
+# Actuator config
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+        exclude: 'env,bean'
+  metrics:
+    tags:
+      application: ${spring.application.name}
+    export:
+      prometheus:
+        enabled: true
