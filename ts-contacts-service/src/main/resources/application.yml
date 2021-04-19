@@ -6,18 +6,18 @@ spring:
     name: ts-contacts-service
   data:
     mongodb:
-      host: ts-contacts-mongo
+      host: localhost
       database: ts
       port: 27017
 
 swagger:
   controllerPackage: contacts.controller
 
-opentracing:
-  jaeger:
-    udp-sender:
-      host: jaeger
-      port: 6831
+#opentracing:
+#  jaeger:
+#    udp-sender:
+#      host: jaeger
+#      port: 6831
 
 # Actuator config
 management:

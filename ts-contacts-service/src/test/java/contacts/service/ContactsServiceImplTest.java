@@ -62,7 +62,7 @@ public class ContactsServiceImplTest {
     @Test
     public void testCreateContacts1() {
         Contacts contacts = new Contacts();
-        Mockito.when(contactsRepository.findById(Mockito.any(UUID.class))).thenReturn(contacts);
+        Mockito.when(contactsRepository.findById(contacts.getId())).thenReturn(contacts);
         Response result = contactsServiceImpl.createContacts(contacts, headers);
         Assert.assertEquals(new Response<>(0, "Already Exists", contacts), result);
     }
