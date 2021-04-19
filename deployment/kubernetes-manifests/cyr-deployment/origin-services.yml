@@ -610,7 +610,7 @@ spec:
     spec:
       containers:
         - name: ts-news-service
-          image: kanakami/ts-news-service:0.0.2
+          image: codewisdom/ts-news-service-with-jaeger:v1
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 12862
@@ -1135,7 +1135,7 @@ spec:
     spec:
       containers:
         - name: ts-ticket-office-service
-          image: kanakami/ts-ticket-office-service:0.0.2
+          image: codewisdom/ts-ticket-office-service-with-jaeger:v1
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 16108
@@ -1380,7 +1380,7 @@ spec:
     spec:
       containers:
         - name: ts-voucher-service
-          image: kanakami/ts-voucher-service:0.0.2
+          image: codewisdom/ts-voucher-service-with-jaeger:v1
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 16101
