@@ -6,7 +6,8 @@ spring:
     name: ts-contacts-service
   data:
     mongodb:
-      host: localhost
+      host: ts-contacts-mongo
+#      host: localhost
       database: ts
       port: 27017
 

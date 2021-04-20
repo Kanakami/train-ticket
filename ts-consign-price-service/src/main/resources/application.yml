@@ -4,6 +4,7 @@ spring:
   data:
     mongodb:
       host: ts-consign-price-mongo
+#      host: localhost
       database: ts
       port: 27017
 
