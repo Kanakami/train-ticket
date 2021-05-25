@@ -67,7 +67,7 @@ spec:
       containers:
         - name: ts-travel-plan-service
           image: kanakami/ts-travel-plan-service:0.0.1
-          imagePullPolicy: IfNotPresent
+          imagePullPolicy: Always
           ports:
             - containerPort: 14322
           resources:
@@ -115,7 +115,7 @@ spec:
       containers:
       - name: ts-basic-service
         image: kanakami/ts-basic-service:0.0.1
-        imagePullPolicy: IfNotPresent
+        imagePullPolicy: Always
         ports:
         - containerPort: 15680
         resources:
@@ -163,7 +163,7 @@ spec:
       containers:
         - name: ts-ticketinfo-service
           image: kanakami/ts-ticketinfo-service:0.0.1
-          imagePullPolicy: IfNotPresent
+          imagePullPolicy: Always
           ports:
             - containerPort: 15681
           resources:
@@ -211,7 +211,7 @@ spec:
       containers:
         - name: ts-travel-service
           image: kanakami/ts-travel-service:0.0.1
-          imagePullPolicy: IfNotPresent
+          imagePullPolicy: Always
           ports:
             - containerPort: 12346
           resources:
@@ -260,7 +260,7 @@ spec:
       containers:
         - name: ts-travel2-service
           image: kanakami/ts-travel2-service:0.0.1
-          imagePullPolicy: IfNotPresent
+          imagePullPolicy: Always
           ports:
             - containerPort: 16346
           resources:
