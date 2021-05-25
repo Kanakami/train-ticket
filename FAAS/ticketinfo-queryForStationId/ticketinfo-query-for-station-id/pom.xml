@@ -88,7 +88,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>2.3.7.RELEASE</version>
                 <configuration>
-                    <mainClass>com.example.ticketinfoQueryForStationId.FAASTicketInfoQueryForStationId</mainClass>
+                    <mainClass>com.example.queryRouteById.FAASTicketInfoQueryForStationId</mainClass>
                     <layers>
                         <enabled>true</enabled>
                     </layers>

@@ -37,7 +37,7 @@ public class StationServiceImplTest {
     @Test
     public void testCreate1() {
         Station station = new Station();
-        Mockito.when(repository.findById(Mockito.anyString())).thenReturn(null);
+        Mockito.when(repository.findById(Mockito.anyString())).thenReturn(Optional.empty());
         Mockito.when(repository.save(Mockito.any(Station.class))).thenReturn(null);
         Response result = stationServiceImpl.create(station, headers);
         Assert.assertEquals(new Response<>(1, "Create success", station), result);
@@ -67,7 +67,7 @@ public class StationServiceImplTest {
     @Test
     public void testUpdate1() {
         Station info = new Station();
-        Mockito.when(repository.findById(Mockito.anyString())).thenReturn(null);
+        Mockito.when(repository.findById(Mockito.anyString())).thenReturn(Optional.empty());
         Response result = stationServiceImpl.update(info, headers);
         Assert.assertEquals(new Response<>(0, "Station not exist", null), result);
     }
@@ -93,7 +93,7 @@ public class StationServiceImplTest {
     @Test
     public void testDelete2() {
         Station info = new Station();
-        Mockito.when(repository.findById(Mockito.anyString())).thenReturn(null);
+        Mockito.when(repository.findById(Mockito.anyString())).thenReturn(Optional.empty());
         Response result = stationServiceImpl.delete(info, headers);
         Assert.assertEquals(new Response<>(0, "Station not exist", null), result);
     }
@@ -155,7 +155,7 @@ public class StationServiceImplTest {
 
     @Test
     public void testQueryById2() {
-        Mockito.when(repository.findById(Mockito.anyString())).thenReturn(null);
+        Mockito.when(repository.findById(Mockito.anyString())).thenReturn(Optional.empty());
         Response result = stationServiceImpl.queryById("station_id", headers);
         Assert.assertEquals(new Response<>(0, "No that stationId", "station_id"), result);
     }

@@ -22,7 +22,7 @@ public class StationServiceImpl implements StationService {
 
     @Override
     public Response create(Station station, HttpHeaders headers) {
-        if (repository.findById(station.getId()) == null) {
+        if (!repository.findById(station.getId()).isPresent()) {
             station.setStayTime(station.getStayTime());
             repository.save(station);
             return new Response<>(1, "Create success", station);
@@ -43,7 +43,7 @@ public class StationServiceImpl implements StationService {
     @Override
     public Response update(Station info, HttpHeaders headers) {
 
-        if (repository.findById(info.getId()) == null) {
+        if (!repository.findById(info.getId()).isPresent()) {
             return new Response<>(0, "Station not exist", null);
         } else {
             Station station = new Station(info.getId(), info.getName());
@@ -56,7 +56,7 @@ public class StationServiceImpl implements StationService {
     @Override
     public Response delete(Station info, HttpHeaders headers) {
 
-        if (repository.findById(info.getId()) != null) {
+        if (repository.findById(info.getId()).isPresent()) {
             Station station = new Station(info.getId(), info.getName());
             repository.delete(station);
             return new Response<>(1, "Delete success", station);
@@ -109,7 +109,7 @@ public class StationServiceImpl implements StationService {
     @Override
     public Response queryById(String stationId, HttpHeaders headers) {
         Optional<Station> station = repository.findById(stationId);
-        if (station != null) {
+        if (station.isPresent()) {
             return new Response<>(1, success, station.get().getName());
         } else {
             return new Response<>(0, "No that stationId", stationId);
@@ -121,7 +121,7 @@ public class StationServiceImpl implements StationService {
         ArrayList<String> result = new ArrayList<>();
         for (int i = 0; i < idList.size(); i++) {
             Optional<Station> station = repository.findById(idList.get(i));
-            if (station != null) {
+            if (station.isPresent()) {
                 result.add(station.get().getName());
             }
         }

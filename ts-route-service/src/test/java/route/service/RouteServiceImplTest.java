@@ -53,7 +53,7 @@ public class RouteServiceImplTest {
     @Test
     public void testCreateAndModify3() {
         RouteInfo info = new RouteInfo("id123456789", "start_station", "end_station", "shanghai", "5");
-        Mockito.when(routeRepository.findById(Mockito.anyString())).thenReturn(null);
+        Mockito.when(routeRepository.findById(Mockito.anyString())).thenReturn(Optional.empty());
         Mockito.when(routeRepository.save(Mockito.any(Route.class))).thenReturn(null);
         Response result = routeServiceImpl.createAndModify(info, headers);
         Assert.assertEquals("Modify success", result.getMsg());
@@ -62,7 +62,7 @@ public class RouteServiceImplTest {
     @Test
     public void testDeleteRoute1() {
         Mockito.doNothing().doThrow(new RuntimeException()).when(routeRepository).removeRouteById(Mockito.anyString());
-        Mockito.when(routeRepository.findById(Mockito.anyString())).thenReturn(null);
+        Mockito.when(routeRepository.findById(Mockito.anyString())).thenReturn(Optional.empty());
         Response result = routeServiceImpl.deleteRoute("route_id", headers);
         Assert.assertEquals(new Response<>(1, "Delete Success", "route_id"), result);
     }
@@ -78,7 +78,7 @@ public class RouteServiceImplTest {
 
     @Test
     public void testGetRouteById1() {
-        Mockito.when(routeRepository.findById(Mockito.anyString())).thenReturn(null);
+        Mockito.when(routeRepository.findById(Mockito.anyString())).thenReturn(Optional.empty());
         Response result = routeServiceImpl.getRouteById("route_id", headers);
         Assert.assertEquals(new Response<>(0, "No content with the routeId", null), result);
     }

@@ -1,5 +1,5 @@
-package com.example.ticketinfoQueryForStationId.controller;
-import com.example.ticketinfoQueryForStationId.service.BasicQueryForStationIdService;
+package com.example.queryRouteById.controller;
+import com.example.queryRouteById.service.BasicQueryForStationIdService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.web.bind.annotation.*;

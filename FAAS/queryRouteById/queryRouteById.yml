@@ -1,0 +1,8 @@
+provider:
+  name: openfaas
+  gateway: http://10.176.122.15:31112
+functions:
+  query-route-by-id:
+    lang: springboot
+    handler: ./query-route-by-id
+    image: kanakami/query-route-by-id:latest

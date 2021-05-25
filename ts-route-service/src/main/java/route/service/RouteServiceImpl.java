@@ -58,7 +58,7 @@ public class RouteServiceImpl implements RouteService {
             return new Response<>(1, "Save Success", route);
         } else {
             Optional<Route> route = routeRepository.findById(info.getId());
-            if (route == null) {
+            if (!route.isPresent()) {
                 route = Optional.of(new Route());
                 route.get().setId(info.getId());
             }
@@ -77,7 +77,7 @@ public class RouteServiceImpl implements RouteService {
     public Response deleteRoute(String routeId, HttpHeaders headers) {
         routeRepository.removeRouteById(routeId);
         Optional<Route> route = routeRepository.findById(routeId);
-        if (route == null) {
+        if (!route.isPresent()) {
             return new Response<>(1, "Delete Success", routeId);
         } else {
             return new Response<>(0, "Delete failed, Reason unKnown with this routeId", routeId);
@@ -87,7 +87,7 @@ public class RouteServiceImpl implements RouteService {
     @Override
     public Response getRouteById(String routeId, HttpHeaders headers) {
         Optional<Route> route = routeRepository.findById(routeId);
-        if (route == null) {
+        if (!route.isPresent()) {
             return new Response<>(0, "No content with the routeId", null);
         } else {
             return new Response<>(1, success, route.get());

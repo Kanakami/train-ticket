@@ -191,7 +191,7 @@ public class InsidePaymentServiceImplTest {
     @Test
     public void testInitPayment1() {
         Payment payment = new Payment();
-        Mockito.when(paymentRepository.findById(Mockito.anyString())).thenReturn(null);
+        Mockito.when(paymentRepository.findById(Mockito.anyString())).thenReturn(Optional.empty());
         Mockito.when(paymentRepository.save(Mockito.any(Payment.class))).thenReturn(null);
         insidePaymentServiceImpl.initPayment(payment, headers);
         Mockito.verify(paymentRepository, times(1)).save(Mockito.any(Payment.class));
