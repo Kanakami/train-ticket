@@ -385,7 +385,8 @@ public class Travel2ServiceImpl implements Travel2Service {
 
         HttpEntity requestEntity = new HttpEntity(seatRequest, headers);
         ResponseEntity<Response<Integer>> re = restTemplate.exchange(
-                "http://ts-seat-service:18898/api/v1/seatservice/seats/left_tickets",
+//                "http://ts-seat-service:18898/api/v1/seatservice/seats/left_tickets",
+                "http://10.176.122.15:31112/function/get-left-ticket-of-interval/seats/left_tickets",
                 HttpMethod.POST,
                 requestEntity,
                 new ParameterizedTypeReference<Response<Integer>>() {

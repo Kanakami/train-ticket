@@ -92,7 +92,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>2.3.7.RELEASE</version>
                 <configuration>
-                    <mainClass>com.example.queryRouteById.FAASQueryRouteById</mainClass>
+                    <mainClass>com.example.getLeftTicketOfInterval.FAASGetLeftTicketOfInterval</mainClass>
                     <layers>
                         <enabled>true</enabled>
                     </layers>

@@ -1,5 +1,5 @@
-package com.example.queryRouteById.controller;
-import com.example.queryRouteById.service.BasicQueryForStationIdService;
+package com.example.getLeftTicketOfInterval.controller;
+import com.example.getLeftTicketOfInterval.service.BasicQueryForStationIdService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.web.bind.annotation.*;

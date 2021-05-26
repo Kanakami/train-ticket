@@ -1,0 +1,8 @@
+provider:
+  name: openfaas
+  gateway: http://10.176.122.15:31112
+functions:
+  get-left-ticket-of-interval:
+    lang: springboot
+    handler: ./get-left-ticket-of-interval
+    image: kanakami/get-left-ticket-of-interval:latest
