@@ -1,5 +1,5 @@
-package com.example.getOrderById.controller;
-import com.example.getOrderById.service.GetOrderByIdService;
+package com.example.orderGetTicketListByDateAndTripId.controller;
+import com.example.orderGetTicketListByDateAndTripId.service.GetOrderByIdService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,7 +1,7 @@
-package com.example.getOrderById.service;
+package com.example.orderGetTicketListByDateAndTripId.service;
 
-import com.example.getOrderById.entity.Order;
-import com.example.getOrderById.repository.OrderRepository;
+import com.example.orderGetTicketListByDateAndTripId.entity.Order;
+import com.example.orderGetTicketListByDateAndTripId.repository.OrderRepository;
 import edu.fudan.common.util.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;

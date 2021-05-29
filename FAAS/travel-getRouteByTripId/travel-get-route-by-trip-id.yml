@@ -1,0 +1,8 @@
+provider:
+  name: openfaas
+  gateway: http://10.176.122.15:31112
+functions:
+  travel-get-route-by-trip-id:
+    lang: springboot
+    handler: ./travel-get-route-by-trip-id
+    image: kanakami/travel-get-route-by-trip-id:latest

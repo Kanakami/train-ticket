@@ -1,6 +1,6 @@
-package com.example.getLeftTicketOfInterval.repository;
+package com.example.queryForStationId.repository;
 
-import com.example.getLeftTicketOfInterval.entity.Station;
+import com.example.queryRouteById.entity.Station;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;

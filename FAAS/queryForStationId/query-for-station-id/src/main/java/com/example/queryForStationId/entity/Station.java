@@ -1,4 +1,4 @@
-package com.example.getLeftTicketOfInterval.entity;
+package com.example.queryForStationId.entity;
 
 
 import lombok.Data;

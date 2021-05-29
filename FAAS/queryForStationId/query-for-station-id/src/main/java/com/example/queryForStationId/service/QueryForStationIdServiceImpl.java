@@ -1,11 +1,11 @@
-package com.example.getLeftTicketOfInterval.service;
+package com.example.queryForStationId.service;
 
-import com.example.getLeftTicketOfInterval.repository.StationRepository;
+import com.example.queryRouteById.repository.StationRepository;
 import edu.fudan.common.util.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Service;
-import com.example.getLeftTicketOfInterval.entity.Station;
+import com.example.queryRouteById.entity.Station;
 
 @Service
 public class QueryForStationIdServiceImpl implements QueryForStationIdService{

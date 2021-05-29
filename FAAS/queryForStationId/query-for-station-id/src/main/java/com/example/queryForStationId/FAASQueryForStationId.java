@@ -1,4 +1,4 @@
-package com.example.getLeftTicketOfInterval;
+package com.example.queryForStationId;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

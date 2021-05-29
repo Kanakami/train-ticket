@@ -1,11 +1,11 @@
-package com.example.getOrderById.repository;
+package com.example.orderGetTicketListByDateAndTripId.repository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
 import org.springframework.stereotype.Repository;
-import com.example.getOrderById.entity.Order;
+import com.example.orderGetTicketListByDateAndTripId.entity.Order;
 
 import java.util.UUID;
 

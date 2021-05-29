@@ -150,7 +150,8 @@ public class FoodServiceImpl implements FoodService {
         /**--------------------------------------------------------------------------------------*/
         HttpEntity requestEntityGetRouteResult = new HttpEntity(null, headers);
         ResponseEntity<Response<Route>> reGetRouteResult = restTemplate.exchange(
-                "http://ts-travel-service:12346/api/v1/travelservice/routes/" + tripId,
+//                "http://ts-travel-service:12346/api/v1/travelservice/routes/" + tripId,
+                "http://10.176.122.15:31112/function/travel-get-route-by-trip-id/routes/" + tripId,
                 HttpMethod.GET,
                 requestEntityGetRouteResult,
                 new ParameterizedTypeReference<Response<Route>>() {

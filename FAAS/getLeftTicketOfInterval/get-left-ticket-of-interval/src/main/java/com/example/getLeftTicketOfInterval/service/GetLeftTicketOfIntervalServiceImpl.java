@@ -1,5 +1,6 @@
 package com.example.getLeftTicketOfInterval.service;
 
+import com.example.getLeftTicketOfInterval.entity.*;
 import edu.fudan.common.util.Response;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,13 +14,13 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-import com.example.getLeftTicketOfInterval.entity.*;
+import com.example.queryRouteById.entity.*;
 
 import java.util.List;
 import java.util.Set;
 
 @Service
-public class GetLeftTicketOfIntervalServiceImpl implements com.example.getLeftTicketOfInterval.service.GetLeftTicketOfIntervalService {
+public class GetLeftTicketOfIntervalServiceImpl implements GetLeftTicketOfIntervalService {
     @Bean
     public RestTemplate restTemplate(RestTemplateBuilder builder){
         return builder.build();
@@ -50,7 +51,8 @@ public class GetLeftTicketOfIntervalServiceImpl implements com.example.getLeftTi
             //Call the micro service to query all the station information for the trains
             HttpEntity requestEntity = new HttpEntity(headers);
             re = restTemplate.exchange(
-                    "http://ts-travel-service:12346/api/v1/travelservice/routes/" + trainNumber,
+//                    "http://ts-travel-service:12346/api/v1/travelservice/routes/" + trainNumber,
+                    "http://10.176.122.15:31112/function/travel-get-route-by-trip-id/routes/" + trainNumber,
                     HttpMethod.GET,
                     requestEntity,
                     new ParameterizedTypeReference<Response<Route>>() {
@@ -61,7 +63,8 @@ public class GetLeftTicketOfIntervalServiceImpl implements com.example.getLeftTi
             //Call the micro service to query for residual Ticket information: the set of the Ticket sold for the specified seat type
             requestEntity = new HttpEntity(seatRequest, headers);
             re3 = restTemplate.exchange(
-                    "http://ts-order-service:12031/api/v1/orderservice/order/tickets",
+//                    "http://ts-order-service:12031/api/v1/orderservice/order/tickets",
+                    "http://10.176.122.15:31112/function/order-get-ticket-list-by-date-and-trip-id/order/tickets",
                     HttpMethod.POST,
                     requestEntity,
                     new ParameterizedTypeReference<Response<LeftTicketInfo>>() {
@@ -73,7 +76,8 @@ public class GetLeftTicketOfIntervalServiceImpl implements com.example.getLeftTi
             //Calls the microservice to query the total number of seats specified for that vehicle
             requestEntity = new HttpEntity(headers);
             re2 = restTemplate.exchange(
-                    "http://ts-travel-service:12346/api/v1/travelservice/train_types/" + seatRequest.getTrainNumber(),
+//                    "http://ts-travel-service:12346/api/v1/travelservice/train_types/" + seatRequest.getTrainNumber(),
+                    "http://10.176.122.15:31112/function/travel-get-train-type-by-trip-id/train_types/" + seatRequest.getTrainNumber(),
                     HttpMethod.GET,
                     requestEntity,
                     new ParameterizedTypeReference<Response<TrainType>>() {

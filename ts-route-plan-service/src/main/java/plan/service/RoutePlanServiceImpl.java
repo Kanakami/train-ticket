@@ -337,7 +337,8 @@ public class RoutePlanServiceImpl implements RoutePlanService {
 
         String path;
         if (tripId.charAt(0) == 'G' || tripId.charAt(0) == 'D') {
-            path = "http://ts-travel-service:12346/api/v1/travelservice/routes/" + tripId;
+//            path = "http://ts-travel-service:12346/api/v1/travelservice/routes/" + tripId;
+            path = "http://10.176.122.15:31112/function/travel-get-route-by-trip-id/routes/" + tripId;
         } else {
             path = "http://ts-travel2-service:16346/api/v1/travel2service/routes/" + tripId;
         }

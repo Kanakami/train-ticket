@@ -1,4 +1,4 @@
-package com.example.getOrderById.service;
+package com.example.orderGetTicketListByDateAndTripId.service;
 
 import edu.fudan.common.util.Response;
 import org.springframework.http.HttpHeaders;
