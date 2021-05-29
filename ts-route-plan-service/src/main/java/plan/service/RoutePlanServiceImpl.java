@@ -288,7 +288,7 @@ public class RoutePlanServiceImpl implements RoutePlanService {
         HttpEntity requestEntity = new HttpEntity(headers);
         ResponseEntity<Response<Route>> re = restTemplate.exchange(
 //                "http://ts-route-service:11178/api/v1/routeservice/routes/" + routeId,
-                "http://10.176.122.15:31112/function/query-route-by-id/routes" + routeId,
+                "http://10.176.122.15:31112/function/query-route-by-id/routes/" + routeId,
                 HttpMethod.GET,
                 requestEntity,
                 new ParameterizedTypeReference<Response<Route>>() {
