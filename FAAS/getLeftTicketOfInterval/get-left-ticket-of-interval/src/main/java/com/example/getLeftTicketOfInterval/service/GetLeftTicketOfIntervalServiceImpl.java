@@ -14,7 +14,6 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-import com.example.queryRouteById.entity.*;
 
 import java.util.List;
 import java.util.Set;
