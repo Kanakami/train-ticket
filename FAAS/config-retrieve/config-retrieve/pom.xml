@@ -3,10 +3,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.example</groupId>
-    <artifactId>queryRouteById</artifactId>
+    <artifactId>configRetrieve</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>queryRouteById</name>
-    <description>queryRouteById</description>
+    <name>configRetrieve</name>
+    <description>config retrieve</description>
 
     <properties>
         <java.version>1.8</java.version>
@@ -92,7 +92,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>2.3.7.RELEASE</version>
                 <configuration>
-                    <mainClass>com.example.queryRouteById.FAASQueryRouteById</mainClass>
+                    <mainClass>com.example.configRetrieve.FAASConfigRetrieve</mainClass>
                     <layers>
                         <enabled>true</enabled>
                     </layers>

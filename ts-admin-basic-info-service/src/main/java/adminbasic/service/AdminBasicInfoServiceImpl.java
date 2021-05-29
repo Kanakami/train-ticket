@@ -239,7 +239,8 @@ public class AdminBasicInfoServiceImpl implements AdminBasicInfoService {
 
         HttpEntity requestEntity = new HttpEntity(headers);
         ResponseEntity<Response> re = restTemplate.exchange(
-                "http://ts-config-service:15679/api/v1/configservice/configs/" + name,
+//                "http://ts-config-service:15679/api/v1/configservice/configs/" + name,
+                "http://10.176.122.15:31112/function/config-retrieve/configs/" + name,
                 HttpMethod.DELETE,
                 requestEntity,
                 Response.class);

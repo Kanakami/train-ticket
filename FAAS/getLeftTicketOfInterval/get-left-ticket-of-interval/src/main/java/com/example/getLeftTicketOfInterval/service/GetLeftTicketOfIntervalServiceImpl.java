@@ -172,7 +172,8 @@ public class GetLeftTicketOfIntervalServiceImpl implements GetLeftTicketOfInterv
         String configName = "DirectTicketAllocationProportion";
         HttpEntity requestEntity = new HttpEntity(headers);
         ResponseEntity<Response<Config>> re = restTemplate.exchange(
-                "http://ts-config-service.default:15679/api/v1/configservice/configs/" + configName,
+//                "http://ts-config-service.default:15679/api/v1/configservice/configs/" + configName,
+                "http://10.176.122.15:31112/function/config-retrieve/configs/" + configName,
                 HttpMethod.GET,
                 requestEntity,
                 new ParameterizedTypeReference<Response<Config>>() {
