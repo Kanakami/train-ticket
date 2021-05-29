@@ -53,7 +53,8 @@ public class BasicServiceImplTest {
                 Response.class)).thenReturn(re);
         //mock queryTrainType()
         Mockito.when(restTemplate.exchange(
-                "http://ts-train-service:14567/api/v1/trainservice/trains/" + "",
+//                "http://ts-train-service:14567/api/v1/trainservice/trains/" + "",
+                "http://10.176.122.15:31112/function/train-retrieve/trains/" + "",
                 HttpMethod.GET,
                 requestEntity,
                 Response.class)).thenReturn(re);
@@ -109,7 +110,8 @@ public class BasicServiceImplTest {
         Response response = new Response<>();
         ResponseEntity<Response> re = new ResponseEntity<>(response, HttpStatus.OK);
         Mockito.when(restTemplate.exchange(
-                "http://ts-train-service:14567/api/v1/trainservice/trains/" + "trainTypeId",
+//                "http://ts-train-service:14567/api/v1/trainservice/trains/" + "trainTypeId",
+                "http://10.176.122.15:31112/function/train-retrieve/trains/" + "trainTypeId",
                 HttpMethod.GET,
                 requestEntity,
                 Response.class)).thenReturn(re);
