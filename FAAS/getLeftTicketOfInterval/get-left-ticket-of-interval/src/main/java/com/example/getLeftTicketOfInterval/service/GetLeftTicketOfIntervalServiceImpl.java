@@ -91,7 +91,7 @@ public class GetLeftTicketOfIntervalServiceImpl implements GetLeftTicketOfInterv
             //Call the micro service to query all the station information for the trains
             HttpEntity requestEntity = new HttpEntity(headers);
             re = restTemplate.exchange(
-                    "http://ts-travel2-service:16346/api/v1/travel2service/routes/" + seatRequest.getTrainNumber(),
+                    "http://ts-travel2-service.default:16346/api/v1/travel2service/routes/" + seatRequest.getTrainNumber(),
                     HttpMethod.GET,
                     requestEntity,
                     new ParameterizedTypeReference<Response<Route>>() {
@@ -102,7 +102,7 @@ public class GetLeftTicketOfIntervalServiceImpl implements GetLeftTicketOfInterv
             //Call the micro service to query for residual Ticket information: the set of the Ticket sold for the specified seat type
             requestEntity = new HttpEntity(seatRequest, headers);
             re3 = restTemplate.exchange(
-                    "http://ts-order-other-service:12032/api/v1/orderOtherService/orderOther/tickets",
+                    "http://ts-order-other-service.default:12032/api/v1/orderOtherService/orderOther/tickets",
                     HttpMethod.POST,
                     requestEntity,
                     new ParameterizedTypeReference<Response<LeftTicketInfo>>() {
@@ -114,7 +114,7 @@ public class GetLeftTicketOfIntervalServiceImpl implements GetLeftTicketOfInterv
             //Calls the microservice to query the total number of seats specified for that vehicle
             requestEntity = new HttpEntity(headers);
             re2 = restTemplate.exchange(
-                    "http://ts-travel2-service:16346/api/v1/travel2service/train_types/" + seatRequest.getTrainNumber(),
+                    "http://ts-travel2-service.default:16346/api/v1/travel2service/train_types/" + seatRequest.getTrainNumber(),
                     HttpMethod.GET,
                     requestEntity,
                     new ParameterizedTypeReference<Response<TrainType>>() {
@@ -172,7 +172,7 @@ public class GetLeftTicketOfIntervalServiceImpl implements GetLeftTicketOfInterv
         String configName = "DirectTicketAllocationProportion";
         HttpEntity requestEntity = new HttpEntity(headers);
         ResponseEntity<Response<Config>> re = restTemplate.exchange(
-                "http://ts-config-service:15679/api/v1/configservice/configs/" + configName,
+                "http://ts-config-service.default:15679/api/v1/configservice/configs/" + configName,
                 HttpMethod.GET,
                 requestEntity,
                 new ParameterizedTypeReference<Response<Config>>() {
